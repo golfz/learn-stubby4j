@@ -116,3 +116,29 @@ Quit: ctrl-c
 	"url": "https://swapi.co/api/starships/9/"
 }
 ```
+
+
+ผมเอาข้อมูล JSON ไปสร้างไฟล์ .json ตามลำดับ คือ `person-1.json` และ `starship-9.json`
+
+### เราจะสร้างไฟล์ YAML ขึ้นมาใหม่ (ผมตั้งชื่อว่า starwar.yaml)
+```yaml
+-  request:
+      method: [GET]
+      url: /person/1
+
+   response:
+      -  status: 200
+         headers:
+            content-type: application/json
+         file: person-1.json
+	 
+-  request:
+      method: [GET]
+      url: /starships/9
+
+   response:
+      -  status: 200
+         headers:
+            content-type: application/json
+         file: starship-9.json
+```
