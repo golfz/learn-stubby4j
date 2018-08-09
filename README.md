@@ -131,7 +131,7 @@ Quit: ctrl-c
          headers:
             content-type: application/json
          file: person-1.json
-	 
+
 -  request:
       method: [GET]
       url: /starships/9
