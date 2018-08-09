@@ -54,3 +54,65 @@ Quit: ctrl-c
 * ลองทดสอบด้วย Postman
 ![ลองทดสอบด้วย Postman](https://raw.githubusercontent.com/golfz/learn-stubby4j/master/Screenshot-01.png)
 
+## การ response ข้อมูล JSON ที่ซับซ้อนขึ้น
+จะลองทำเหมือนเว็บ [https://swapi.co](https://swapi.co) ถ้าส่ง request ไปที่ `/person/1` จะได้รับ
+```json
+{
+	"name": "Luke Skywalker",
+	"height": "172",
+	"mass": "77",
+	"hair_color": "blond",
+	"skin_color": "fair",
+	"eye_color": "blue",
+	"birth_year": "19BBY",
+	"gender": "male",
+	"homeworld": "https://swapi.co/api/planets/1/",
+	"films": [
+		"https://swapi.co/api/films/2/",
+		"https://swapi.co/api/films/6/",
+		"https://swapi.co/api/films/3/",
+		"https://swapi.co/api/films/1/",
+		"https://swapi.co/api/films/7/"
+	],
+	"species": [
+		"https://swapi.co/api/species/1/"
+	],
+	"vehicles": [
+		"https://swapi.co/api/vehicles/14/",
+		"https://swapi.co/api/vehicles/30/"
+	],
+	"starships": [
+		"https://swapi.co/api/starships/12/",
+		"https://swapi.co/api/starships/22/"
+	],
+	"created": "2014-12-09T13:50:51.644000Z",
+	"edited": "2014-12-20T21:17:56.891000Z",
+	"url": "https://swapi.co/api/people/1/"
+}
+```
+
+หรือถ้าส่ง request ไปที่ `/starships/9` จะได้รับ
+```json
+{
+	"name": "Death Star",
+	"model": "DS-1 Orbital Battle Station",
+	"manufacturer": "Imperial Department of Military Research, Sienar Fleet Systems",
+	"cost_in_credits": "1000000000000",
+	"length": "120000",
+	"max_atmosphering_speed": "n/a",
+	"crew": "342953",
+	"passengers": "843342",
+	"cargo_capacity": "1000000000000",
+	"consumables": "3 years",
+	"hyperdrive_rating": "4.0",
+	"MGLT": "10",
+	"starship_class": "Deep Space Mobile Battlestation",
+	"pilots": [],
+	"films": [
+		"https://swapi.co/api/films/1/"
+	],
+	"created": "2014-12-10T16:36:50.509000Z",
+	"edited": "2014-12-22T17:35:44.452589Z",
+	"url": "https://swapi.co/api/starships/9/"
+}
+```
