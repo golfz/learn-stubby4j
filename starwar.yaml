@@ -1,0 +1,19 @@
+-  request:
+      method: [GET]
+      url: /person/1
+
+   response:
+      -  status: 200
+         headers:
+            content-type: application/json
+         file: person-1.json
+
+-  request:
+      method: [GET]
+      url: /starships/9
+
+   response:
+      -  status: 200
+         headers:
+            content-type: application/json
+         file: starship-9.json
