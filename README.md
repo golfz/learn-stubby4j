@@ -142,3 +142,11 @@ Quit: ctrl-c
             content-type: application/json
          file: starship-9.json
 ```
+
+#### ทดลองรัน
+```
+java -jar stubby4j-x.x.xx.jar -d starwar.yaml
+```
+
+#### ผลจากการทดลองด้วย Postman
+
