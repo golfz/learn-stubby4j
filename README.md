@@ -149,4 +149,12 @@ java -jar stubby4j-x.x.xx.jar -d starwar.yaml
 ```
 
 #### ผลจากการทดลองด้วย Postman
+```
+/person/1
+```
+![/person/1](https://raw.githubusercontent.com/golfz/learn-stubby4j/master/Screenshot-person-1.png)
 
+```
+/starships/9
+```
+![/starships/9](https://raw.githubusercontent.com/golfz/learn-stubby4j/master/Screenshot-starships-9.png)
