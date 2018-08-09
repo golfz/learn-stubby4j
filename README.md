@@ -52,5 +52,5 @@ Quit: ctrl-c
 ```
 
 * ลองทดสอบด้วย Postman
-
+![ลองทดสอบด้วย Postman](https://raw.githubusercontent.com/golfz/learn-stubby4j/master/Screenshot-01.png)
 
