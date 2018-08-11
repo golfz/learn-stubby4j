@@ -1,11 +1,12 @@
 # learn-stubby4j
 เรียนรู้การใช้งาน stubby4j สำหรับ stub web service (เช่น REST)
 
-## Stubby4j คืออะไร
-คือ Stub HTTP(s) Server สำหรับทดสอบระบบงานที่ต้องการใช้งาน Web service เช่น REST, WSDL และ SOAP หรือประเภทอื่น ๆ รวมทั้ง service ภายนอกอื่นๆ อีกด้วย
+## stubby4j คืออะไร
+คือ Stub HTTP(s) Server สำหรับจำลองหรือทดสอบระบบงานที่ต้องการใช้งาน Web service เช่น REST, WSDL และ SOAP หรือประเภทอื่น ๆ รวมทั้ง service ภายนอกอื่นๆ อีกด้วย 
 
 ## Quick start
-เราจะทดสอบแบบง่ายที่สุดด้วย "Hello world" ก่อนที่จะเริ่ม เตรียมระบบให้พร้อม
+เราจะทดสอบใช้งานอย่างง่าย ๆ ด้วย "Hello world" 
+ก่อนที่จะเริ่มเราต้องเตรียมระบบให้พร้อม โดยติดตั้ง java ให้ตรงกับเวอร์ชันของ stubby4j ที่เราจะใช้งาน
 
 ### Minimum system requirements ที่จะใช้รัน stubby4j
 * version >= 4.0.0: Oracle JRE v1.8.0_60
@@ -13,9 +14,9 @@
 * version = 2.0.22: Oracle JRE v1.7.0_04
 * version < 2.0.22: Oracle JRE 1.6.0_65-b14-462
 
-### จากนั้นทำตามนี้
+### จากนั้นทำตามขั้นตอนดังนี้
 * ดาวน์โหลด stubby4j เวอร์ชันล่าสุด[ที่นี่](https://search.maven.org)
-* สร้างไฟล์ YAML ตามนี้ (สมมติว่าชื่อ `hello.yaml`)
+* สร้างไฟล์ YAML ตามนี้ (ตั้งชื่อว่า `hello.yaml`)
 
 ```yaml
 -  request:
@@ -33,7 +34,7 @@
 java -jar stubby4j-x.x.xx.jar -d hello.yaml
 ```
 
-ผมรันแล้วจะได้ผลลัพธ์ประมาณนี้
+รันแล้วจะได้ผลลัพธ์ประมาณนี้
 ```
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
@@ -54,8 +55,11 @@ Quit: ctrl-c
 * ลองทดสอบด้วย Postman
 ![ลองทดสอบด้วย Postman](https://raw.githubusercontent.com/golfz/learn-stubby4j/master/Screenshot-01.png)
 
+จากตัวอย่าง `Hello world` เป็นเพียงการทดลอง response ข้อมูล JSON แบบง่าย ๆ
+แต่ถ้าเราต้องการ response ที่ซับซ้อนหน่อย หรือต้องการทดสอบ request หลาย ๆ API เราจะทำอย่างไร เราจะทดสอบกันในตัวอย่างต่อไป
+
 ## การ response ข้อมูล JSON ที่ซับซ้อนขึ้น
-จะลองทำเหมือนเว็บ [https://swapi.co](https://swapi.co) ถ้าส่ง request ไปที่ `/person/1` จะได้รับ
+ในตัวอย่างนี้จะลองทำเหมือนเว็บ [https://swapi.co](https://swapi.co) ถ้าส่ง request ไปที่ `/person/1` จะได้รับ
 ```json
 {
 	"name": "Luke Skywalker",
@@ -118,9 +122,9 @@ Quit: ctrl-c
 ```
 
 
-ผมเอาข้อมูล JSON ไปสร้างไฟล์ .json ตามลำดับ คือ `person-1.json` และ `starship-9.json`
+ขั้นแรก เราจะนำข้อมูล JSON ดังกล่าว ไปสร้างไฟล์ .json ตามลำดับ คือ `person-1.json` และ `starship-9.json`
 
-### เราจะสร้างไฟล์ YAML ขึ้นมาใหม่ (ผมตั้งชื่อว่า starwar.yaml)
+### ขั้นที่ 2 เราจะสร้างไฟล์ YAML ขึ้นมาใหม่ (ตั้งชื่อว่า starwar.yaml)
 ```yaml
 -  request:
       method: [GET]
@@ -158,3 +162,5 @@ java -jar stubby4j-x.x.xx.jar -d starwar.yaml
 /starships/9
 ```
 ![/starships/9](https://raw.githubusercontent.com/golfz/learn-stubby4j/master/Screenshot-starships-9.png)
+
+เพียงเท่านี้เราก็น่าจะนำ stubby4j ไปประยุกต์ใช้ในงานของเราได้แล้ว
