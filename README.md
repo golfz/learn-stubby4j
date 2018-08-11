@@ -56,7 +56,7 @@ Quit: ctrl-c
 ![ลองทดสอบด้วย Postman](https://raw.githubusercontent.com/golfz/learn-stubby4j/master/Screenshot-01.png)
 
 จากตัวอย่าง `Hello world` เป็นเพียงการทดลอง response ข้อมูล JSON แบบง่าย ๆ
-แต่ถ้าเราต้องการ response ที่ซับซ้อนหน่อย หรือต้องการทดสอบ request ไปที่หลาย ๆ URI เราจะทำอย่างไร เราจะทดสอบกันในตัวอย่างต่อไป
+แต่ถ้าเราต้องการ response ที่ซับซ้อนหน่อย หรือต้องการทดสอบ request ไปที่หลาย ๆ URI เราสามารถทำตามตัวอย่างถัดไปได้เลย
 
 ## การ response ข้อมูล JSON ที่ซับซ้อนขึ้น
 ในตัวอย่างนี้จะลองทำเหมือนเว็บ [https://swapi.co](https://swapi.co) ถ้าส่ง request ไปที่ `/person/1` จะได้รับ
